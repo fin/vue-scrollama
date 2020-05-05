@@ -1290,6 +1290,11 @@ var script = {
 
     this.setup();
   },
+  updated() {
+    this.$nextTick(() => {
+      this.setup();
+    });
+  },
   beforeDestroy() {
     this.scroller.destroy();
   },
@@ -1414,8 +1419,46 @@ var normalizeComponent_1 = normalizeComponent;
 /* script */
 const __vue_script__ = script;
 /* template */
-var __vue_render__ = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"scrollama-container",class:{'with-graphic': _vm.$slots.graphic},attrs:{"id":("scrollama-container-" + _vm.id)}},[_c('div',{ref:"scrollama-graphic",staticClass:"scrollama-graphic",attrs:{"id":("scrollama-graphic-" + _vm.id)}},[_vm._t("graphic")],2),_vm._v(" "),_c('div',{staticClass:"scrollama-steps",attrs:{"id":("scrollama-steps-" + _vm.id)}},[_vm._t("default")],2),_vm._v(" "),_c('resize-observer',{on:{"notify":_vm.handleResize}})],1)};
+var __vue_render__ = function() {
+  var _vm = this;
+  var _h = _vm.$createElement;
+  var _c = _vm._self._c || _h;
+  return _c(
+    "div",
+    {
+      staticClass: "scrollama-container",
+      class: { "with-graphic": _vm.$slots.graphic },
+      attrs: { id: "scrollama-container-" + _vm.id }
+    },
+    [
+      _c(
+        "div",
+        {
+          ref: "scrollama-graphic",
+          staticClass: "scrollama-graphic",
+          attrs: { id: "scrollama-graphic-" + _vm.id }
+        },
+        [_vm._t("graphic")],
+        2
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass: "scrollama-steps",
+          attrs: { id: "scrollama-steps-" + _vm.id }
+        },
+        [_vm._t("default")],
+        2
+      ),
+      _vm._v(" "),
+      _c("resize-observer", { on: { notify: _vm.handleResize } })
+    ],
+    1
+  )
+};
 var __vue_staticRenderFns__ = [];
+__vue_render__._withStripped = true;
 
   /* style */
   const __vue_inject_styles__ = undefined;

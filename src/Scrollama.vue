@@ -41,6 +41,11 @@ export default {
 
     this.setup();
   },
+  updated() {
+    this.$nextTick(() => {
+      this.setup();
+    });
+  },
   beforeDestroy() {
     this.scroller.destroy();
   },
@@ -72,7 +77,9 @@ export default {
       this.scroller.resize();
     },
     handleResize () {
-      this.scroller.resize();
+      this.$nextTick(() => {
+        this.scroller.resize();
+      });
     }
   }
 };
